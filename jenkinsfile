@@ -1,11 +1,11 @@
 pipeline {
     agent any
     stages {
-        stage('Test') {
+        stage('Pull from Git') {
             steps {
-                echo 'Jenkins pipeline pulling code and running successfully!'
+                git branch: 'develop', url: 'https://github.com/dmishra28/jenkins-practice-repo.git'
+                echo "Code pulled successfully to workspace"
             }
         }
     }
 }
-
